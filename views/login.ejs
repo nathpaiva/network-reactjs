@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/lib/skeleton/css/normalize.css" />
+    <link rel="stylesheet" href="/lib/skeleton/css/skeleton.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Network</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Network</h1>
+        </div>
+        <div class="row">
+            <div class="six columns">
+                <h2>Login</h2>
+                <form action="/login" method="POST">
+                    <p>
+                        <label for="username">Username</label>
+                        <input type="text" name="username" class="u-full-width" id="username">
+                    </p>
+                    <p>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="u-full-width" id="password">
+                    </p>
+                    <p>
+                        <button class="button-primary">Log In</button>
+                    </p>
+                </form>
+            </div>
+            <div class="six columns">
+                <h2>Sign Up</h2>
+                <form action="/signup" method="POST">
+                    <p>
+                        <label for="fullname">Full Name</label>
+                        <input type="text" name="fullname" class="u-full-width" id="fullname">
+                    </p>
+                    <p>
+                        <label for="email">Email (Will be used to get you your Gravatar)</label>
+                        <input type="email" name="email" class="u-full-width" id="email">
+                    </p>
+                    <p>
+                        <label for="username">Username</label>
+                        <input type="text" name="username" class="u-full-width" id="username">
+                    </p>
+                    <p>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="u-full-width" id="password">
+                    </p>
+                    <p>
+                        <button class="button-primary">Sign Up</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

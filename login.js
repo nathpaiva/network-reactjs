@@ -27,15 +27,15 @@ passport.use(new LocalStrategy(function (username, password, done) {
 passport.serializeUser(function (user, done){
     done(null, user.cid);
 });
-
-passport.deserializerUser(function (cid, done){
+// deserializeUser
+passport.deserializeUser(function (cid, done){
     done(null, users.get(cid));
 });
 
 var router = require('express').Router();
 var bodyParser = require('body-parser');
 
-router.use(bodyParser.urlecoded({ extend: true})); // login page
+router.use(bodyParser.urlencoded({ extended: true})); // login page
 router.use(bodyParser.json()); // API
 router.use(require('cookie-parser')());
 router.use(require('express-session')({
@@ -45,3 +45,9 @@ router.use(require('express-session')({
 }));
 router.use(passport.initialize());
 router.use(passport.session());
+
+router.get('/login', function (req, res) {
+    res.render('login');
+});
+
+exports.routes = router;
