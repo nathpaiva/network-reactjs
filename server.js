@@ -5,6 +5,7 @@ express()
     .set('view engine', 'ejs')
     .use(express.static('./public'))
     .use(login.routes)
+    .use(require('./network'))
     .get('*', login.require, function (req, res) {
         res.render('index', {
             user: login.safe(req.user)
