@@ -11,4 +11,10 @@ gulp.task('browserify', function () {
         }))
         .pipe(concat('main.js'))
         .pipe(gulp.dest('public'));
-})
+});
+
+gulp.task('default', ['browserify']);
+
+gulp.task('watch', function () {
+    gulp.watch('src/**/*.*',['default']);
+});
