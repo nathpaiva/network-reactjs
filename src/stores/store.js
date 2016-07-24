@@ -22,10 +22,10 @@ var storeMethods = {
             return item.cid === id;
         })[0];
     },
-    addChangeListener: function (methods) {
+    addChangeListener: function (fn) {
         this.on(CHANGE_EVENT, fn);
     },
-    removeChangeListener: function (fv) {
+    removeChangeListener: function (fn) {
         this.removeListener(CHANGE_EVENT, fn);
     },
     emitChange: function () {
@@ -54,6 +54,7 @@ exports.extend = function (methods) {
         if (store.actions[action.actionType]) {
             store.actions[action.actionType].forEach(function (fn) {
                 fn.call(store, action.data);
+                store.emitChange();
             });
         }
     });

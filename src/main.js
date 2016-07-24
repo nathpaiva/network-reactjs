@@ -9,7 +9,6 @@ var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 
 var API = require('./api');
-var NetworkStore = require('./stores/networks');
 
 var routes = (
     <Route component={require('./components/App')}>
@@ -19,10 +18,6 @@ var routes = (
 
 API.fetchNetworks();
 
-// ReactRouter.run(routes, ReactRouter.HistoryLocation, function (Root){
-    // React.render(<Root />, document.getElementById('app'));
-// });
-
 ReactDOM.render(
     (
         <Router history={browserHistory}>
@@ -31,3 +26,7 @@ ReactDOM.render(
     )
     , document.getElementById('app')
 );
+
+// ReactRouter.run(routes, ReactRouter.HistoryLocation, function (Root){
+// React.render(<Root />, document.getElementById('app'));
+// });
