@@ -5,7 +5,7 @@ var db = new (require('locallydb'))('./.data');
 var networks = db.collection('networks');
 
 router.route('/api/networks')
-    .all(login.require)
+    .all(login.required)
     .get(function (req, res) {
         res.json(networks.toArray());
     })

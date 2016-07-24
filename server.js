@@ -6,7 +6,7 @@ express()
     .use(express.static('./public'))
     .use(login.routes)
     .use(require('./network'))
-    .get('*', login.require, function (req, res) {
+    .get('*', login.required, function (req, res) {
         res.render('index', {
             user: login.safe(req.user)
         });

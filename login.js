@@ -102,5 +102,5 @@ function makeUserSafe (user) {
 }
 
 exports.routes = router;
-exports.require = loginRequired;
+exports.required = loginRequired;
 exports.safe = makeUserSafe;
