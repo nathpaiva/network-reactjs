@@ -36,7 +36,7 @@ var NetworkInput = React.createClass({
         this.props.onSave(this.state.value);
         this.setState({
             value: ''
-        })
+        });
     }
 });
 
