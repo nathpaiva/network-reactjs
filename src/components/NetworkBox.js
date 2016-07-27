@@ -1,22 +1,32 @@
 var React = require('react');
 var utils = require('../utils');
 var Link = require('react-router').Link;
-// var moment = require('moment');
+
+// user
+// fullname
+// username
+// avatar
+//
+// text     ||  buttons
+// timestamp
 
 var NetworkBox = React.createClass({
     render : function () {
-        var net = this.props.network;
+        var user = this.props.user;
+        var timestamp = this.props.timestamp ?
+        ' ' + String.fromCharCode(8226) + ' ' + this.props.timestamp : '';
+
         return (
             <li className='row network'>
-                <Link className='two columns' to={`/user/${net.userId}`}>
-                    <img src={utils.avatar(net.email)} />
+                <Link className='two columns' to={`/user/${user.userId}`}>
+                    <img src={utils.avatar(user.email)} />
                 </Link>
                 <div className='ten columns'>
                     <p>
-                        <strong>{net.fullname} </strong>
-                        <span className='timestamp'> @{net.username} @{net.$created}</span>
+                        <strong>{user.fullname} </strong>
+                        <span className='timestamp'> @{user.username} {timestamp}</span>
                     </p>
-                    <p>"{net.text}"</p>
+                    <p>{this.props.children}</p>
                 </div>
             </li>
         )

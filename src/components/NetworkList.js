@@ -1,10 +1,14 @@
 var React = require('react');
-var NetworkBox = require('./NetworkBox');
+var Box = require('./NetworkBox');
+var moment = require('moment');
 
 var NetworkList = React.createClass({
     render : function () {
         var items = this.props.networks.map(function (network) {
-            return <NetworkBox key={network.cid} network={network} />;
+            return <Box key={network.cid} user={network}
+            timestamp={moment(network.$created).fromNow()}>
+            {network.text}
+            </Box>;
         });
         return <ul>{items}</ul>;
     }
