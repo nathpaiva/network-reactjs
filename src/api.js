@@ -6,6 +6,9 @@ var API = module.exports = {
     fetchNetworks: function () {
         get('/api/networks').then(actions.gotNetworks.bind(actions));
     },
+    fetchUsers: function () {
+        get('/api/users').then(actions.gotUsers.bind(actions));
+    },
     saveNetworks: function (txt) {
         txt = txt.trim();
         if (txt === '') return;

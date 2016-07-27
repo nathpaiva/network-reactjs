@@ -18,6 +18,7 @@ var routes = (
 );
 
 API.fetchNetworks();
+API.fetchUsers();
 
 ReactDOM.render(
     (
