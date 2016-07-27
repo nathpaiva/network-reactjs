@@ -13,6 +13,7 @@ var API = require('./api');
 var routes = (
     <Route component={require('./components/App')}>
         <Route name='home' path='/' component={require('./components/Home')} />
+        <Route name='users'path='/users' component={require('./components/UserList')} />
         <Route name='user' path='/user/:id' component={require('./components/Home')} />
     </Route>
 );
