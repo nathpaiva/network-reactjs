@@ -3,6 +3,8 @@ var UserStore = require('../stores/users');
 var actions = require('../actions');
 var Link = require('react-router').Link;
 
+var Box = require('./NetworkBox');
+
 var UserList = React.createClass({
     getInitialState : function () {
         return {
@@ -24,7 +26,10 @@ var UserList = React.createClass({
         var items = this.state.users.filter(function (user) {
             return myUser !== user.cid;
         }.bind(this)).map(function (user) {
-            return <li key={user.cid}>@{user.fullname}</li>;
+            // return <li key={user.cid}>@{user.fullname}</li>;
+            return <Box user={user} key={user.cid}>
+                Follow buttons
+            </Box>
         });
 
         return <ul>{items}</ul>;
