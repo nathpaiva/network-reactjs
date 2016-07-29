@@ -14,7 +14,7 @@ var NetworkBox = React.createClass({
     render : function () {
         var user = this.props.user;
         var timestamp = this.props.timestamp ?
-        ' ' + String.fr omCharCode(8226) + ' ' + this.props.timestamp : '';
+        ' ' + String.fromCharCode(8226) + ' ' + this.props.timestamp : '';
 
         return (
             <li className='row network'>
